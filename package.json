@@ -1,0 +1,13 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "description": "web on Docker",
+  "main": "node.js",
+  "scripts": {
+    "start": "node node.js"
+  },
+  "dependencies" : { 
+    "connect" : ">=3",
+    "express" : ">=4.15"
+  }
+}
