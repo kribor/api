@@ -16,10 +16,8 @@ spec:
     spec:
       containers:
       - env:
-        - name: TEST
-          value: "1234"
         name: "api-kris"
-        image: "kribor/api:${VERSION}"
+        image: "fareoffice/api-kris:${VERSION}"
         imagePullPolicy: Always
         ports:
           -
