@@ -17,7 +17,7 @@ spec:
       containers:
       - env:
         - name: TEST
-          value: "123"
+          value: "1234"
         name: "api-kris"
         image: "kribor/api:${VERSION}"
         imagePullPolicy: Always
