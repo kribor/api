@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: "api-kris"
+  service: api-kris
+spec:
+  replicas: "1"
+  selector:
+    name: "api-kris"
+  strategy:
+    type: "Rolling"
+  template:
+    metadata:
+      labels:
+        name: "api-kris"
+    spec:
+      containers:
+      - env:
+        - name: TEST
+          value: "123"
+        name: "api-kris"
+        image: "kribor/api:${VERSION}"
+        imagePullPolicy: Always
+        ports:
+          -
+            name: "api-kris"
+            containerPort: "8081"
+            protocol: "TCP"
+
+        livenessProbe:
+         tcpSocket:
+           port: 8081
+         initialDelaySeconds: 300
+         timeoutSeconds: 10
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: "api-kris-service"
+spec:
+ selector:
+   name: "api-kris"
+ ports:
+ -
+    name: api-kris-service
+    port: 8081
+    targetPort: 8081
+    protocol: TCP
+---
+
+apiVersion: v1
+kind: Route
+metadata:
+  name: route-api-kris
+  service: api-kris-service
+  labels:
+    router: external
+spec:
+  host: ${DEFAULT_URL}
+  to:
+    kind: Service
+    name: api-kris-service
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+    key: |-
+${WILD_FAREONLINE_KEY}
+    certificate: |-
+${WILD_FAREONLINE_CERT}
+    caCertificate: |-
+${WILD_FAREONLINE_CA}
+#---
+#apiVersion: v1
+#kind: Route
+#metadata:
+#  name: route-api-kris-public
+#  service: api-kris-service
+#  labels:
+#    router: external
+#spec:
+#  host: ${vault:api_kris_public_url}
+#  to:
+#    kind: Service
+#    name: jfox-service
+#  tls:
+#    insecureEdgeTerminationPolicy: Redirect
+#    termination: edge
+#    key: |-
+#${WILD_FAREOFFICE_KEY}
+#    certificate: |-
+#${WILD_FAREOFFICE_CERT}
+#    caCertificate: |-
+#${WILD_FAREOFFICE_CA}
