@@ -15,7 +15,6 @@ spec:
         name: "api-kris"
     spec:
       containers:
-      - env:
         name: "api-kris"
         image: "fareoffice/api-kris:${VERSION}"
         imagePullPolicy: Always
