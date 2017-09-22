@@ -19,7 +19,7 @@ spec:
           image: "fareoffice/api-kris:${VERSION}"
           imagePullPolicy: Always
           ports:
-            - name: "api-kris-dc"
+            - name: "api-kris-1"
               containerPort: "8081"
               protocol: "TCP"
           livenessProbe:
