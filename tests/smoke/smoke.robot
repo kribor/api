@@ -2,7 +2,7 @@
 
 Library         HttpLibrary.HTTP
 Library         Selenium2Library
-Test Setup      Create HTTP Context     ${TEST_TARGET}
+Test Setup      Create HTTP Context     https://${TEST_TARGET}:443/
 
 *** Test Cases ***
 
@@ -19,7 +19,7 @@ Error if invalid URL
     ...  GET   NEITHER_URL_NOR_PATH
 
 Open test browser
-    Open browser  ${TEST_TARGET}
+    Open browser  https://${TEST_TARGET}:443/
 
 Page should contain Hello World!
     Page should contain  Hello World!
