@@ -19,7 +19,7 @@ Error if invalid URL
     ...  GET   NEITHER_URL_NOR_PATH
 
 Open test browser
-    Open browser  ${TARGET_APP_URL}  browser=chrome  remote_url=http://chrome:4444/wd/hub
+    Open browser  ${TEST_TARGET}
 
 Page should contain Hello World!
     Page should contain  Hello World!
