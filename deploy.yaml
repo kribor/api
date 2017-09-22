@@ -22,7 +22,6 @@ spec:
             - name: "api-kris"
               containerPort: "8081"
               protocol: "TCP"
-
           livenessProbe:
             tcpSocket:
               port: 8081
