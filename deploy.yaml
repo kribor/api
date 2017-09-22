@@ -65,25 +65,25 @@ ${WILD_FAREONLINE_KEY}
 ${WILD_FAREONLINE_CERT}
     caCertificate: |-
 ${WILD_FAREONLINE_CA}
-#---
-#apiVersion: v1
-#kind: Route
-#metadata:
-#  name: route-api-kris-public
-#  service: api-kris-service
-#  labels:
-#    router: external
-#spec:
-#  host: ${vault:api_kris_public_url}
-#  to:
-#    kind: Service
-#    name: jfox-service
-#  tls:
-#    insecureEdgeTerminationPolicy: Redirect
-#    termination: edge
-#    key: |-
-#${WILD_FAREOFFICE_KEY}
-#    certificate: |-
-#${WILD_FAREOFFICE_CERT}
-#    caCertificate: |-
-#${WILD_FAREOFFICE_CA}
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: route-api-kris-public
+  service: api-kris-service
+  labels:
+    router: external
+spec:
+  host: api-kris-int.fareoffice.com
+  to:
+    kind: Service
+    name: jfox-service
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+    key: |-
+${WILD_FAREOFFICE_KEY}
+    certificate: |-
+${WILD_FAREOFFICE_CERT}
+    caCertificate: |-
+${WILD_FAREOFFICE_CA}
