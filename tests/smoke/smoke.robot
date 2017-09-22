@@ -2,7 +2,7 @@
 
 Library         HttpLibrary.HTTP
 Library         Selenium2Library
-Test Setup      Create HTTP Context     https://${TEST_TARGET}:443/
+Test Setup      Create HTTP Context     https://${TEST_TARGET}:443
 
 *** Test Cases ***
 
