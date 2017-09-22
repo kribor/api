@@ -2,7 +2,7 @@
 
 Library         HttpLibrary.HTTP
 Library         Selenium2Library
-Test Setup      Create HTTP Context     ${TARGET_APP_URL}
+Test Setup      Create HTTP Context     ${TEST_TARGET}
 
 *** Test Cases ***
 
