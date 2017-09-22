@@ -1,3 +1,6 @@
+# docker build -t fareoffice/api-kris .
+# docker push fareoffice/api-kris
+
 FROM fareoffice/node
 
 RUN mkdir -p /opt/app
