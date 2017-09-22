@@ -77,7 +77,7 @@ spec:
   host: api-kris-int.fareoffice.com
   to:
     kind: Service
-    name: jfox-service
+    name: api-kris-service
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
