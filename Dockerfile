@@ -1,5 +1,5 @@
-# docker build -t fareoffice/api-kris .
-# docker push fareoffice/api-kris
+# docker build -t fareoffice/hcktn-api .
+# docker push fareoffice/hcktn-api
 
 FROM fareoffice/node
 
