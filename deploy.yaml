@@ -74,7 +74,7 @@ metadata:
   labels:
     router: external
 spec:
-  host: hcktn-api-int.fareoffice.com
+  host: ${API_EXTERNAL_URL}
   to:
     kind: Service
     name: hcktn-api-service
