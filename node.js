@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 
 //Send response with the JSON message
 app.get('/', function (req, res) {
-  res.send(JSON.stringify({ message: "Hello World!" }));
+  res.send(JSON.stringify({ message: "Hello World." }));
 });
 
 var server = app.listen(8081, function(){
