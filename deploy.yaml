@@ -46,7 +46,7 @@ spec:
 apiVersion: v1
 kind: Route
 metadata:
-  name: route-hcktn-api
+  name: route-hcktn-api-1
   service: hcktn-api-service
   labels:
     router: external
@@ -68,7 +68,7 @@ ${WILD_FAREONLINE_CA}
 apiVersion: v1
 kind: Route
 metadata:
-  name: route-hcktn-api-public
+  name: route-hcktn-api-public-1
   service: hcktn-api-service
   labels:
     router: external
