@@ -38,7 +38,7 @@ app.get('/country-by-address', function (reqIn, resIn) {
           }
         });
     }
-    console.log("Country: " + country);
+
     if (country != null) {
       resIn.send(JSON.stringify({ country: country }))
     } else {
